@@ -23,7 +23,7 @@ COPY scripts/ scripts/
 COPY .env .env
 COPY Taskfile.yaml Taskfile.yaml
 
-ENTRYPOINT ["task"]
+ENTRYPOINT ["/usr/bin/task"]
 
 FROM builder as build
 WORKDIR /opt/app
