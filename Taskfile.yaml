@@ -30,6 +30,11 @@ tasks:
   docker-release:
     docker build -t cv:{{ .IMAGE_TAG }} -f Dockerfile.{{ .BASE_IMAGE }} .
 
+  docker-build:
+    cmds:
+      - task: docker-builder
+      - task: docker-release
+
   docker-run-task:
     deps:
       - docker-builder
