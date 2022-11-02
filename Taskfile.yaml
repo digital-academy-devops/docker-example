@@ -2,6 +2,9 @@ version: '3'
 
 dotenv: ['.env']
 
+# useful doc abt golang sprig
+# https://go-task.github.io/slim-sprig/date.html
+
 env:
   VERSION: '{{ .VERSION | default ( now | unixEpoch ) }}'
   BASE_IMAGE: '{{ .BASE_IMAGE | default "alpine" }}'
