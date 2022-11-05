@@ -53,3 +53,6 @@ tasks:
 
   docker-server-stop:
     docker-compose -p {{ .PROJECT }} down -v --remove-orphans
+
+  test-ha-server:
+    while true; do curl -v http://localhost:8080 & sleep 1; done;

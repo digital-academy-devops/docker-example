@@ -25,7 +25,7 @@ services:
       - 8080:80
     image: nginx:1.23.2-alpine
     volumes:
-      - ./config/nginx/balancer.conf:/etc/nginx/nginx.conf
+      - ./config/nginx/balancer.conf:/etc/nginx/conf.d/default.conf
 
 volumes:
   cv:
