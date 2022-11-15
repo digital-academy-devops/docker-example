@@ -9,6 +9,7 @@ env:
   VERSION: '{{ .VERSION | default ( now | unixEpoch ) }}'
   BASE_IMAGE: '{{ .BASE_IMAGE | default "alpine" }}'
   IMAGE_TAG: '{{ .BASE_IMAGE }}-{{ .VERSION }}'
+  PROJECT: '{{ .PROJECT | default "cv" }}'
 tasks:
   build:
     cmds:
@@ -43,3 +44,15 @@ tasks:
       - docker-builder
     cmds:
       - docker run --rm -ti cv-builder:{{ .IMAGE_TAG }} {{.CLI_ARGS}}
+
+  docker-server-foreground:
+    docker-compose -p {{ .PROJECT }} up
+
+  docker-server-background:
+    docker-compose -p {{ .PROJECT }} up -d
+
+  docker-server-stop:
+    docker-compose -p {{ .PROJECT }} down -v --remove-orphans
+
+  test-ha-server:
+    while true; do curl -v http://localhost:8080 & sleep 1; done;

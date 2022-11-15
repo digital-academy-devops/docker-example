@@ -131,3 +131,21 @@ task docker-run-task -- *аргументы Taskfile*
 ```shell
 task docker-run-task BASE_IMAGE=ubuntu IMAGE_TAG=test -- skill_by_level LEVEL=middle
 ```
+
+#### Запуск веб-сервера 
+Веб-сервер запускается средствами docker-compose и отдаёт HTML версию резюме
+
+Запуск:
+```shell
+task docker-server-foreground
+```
+
+Фоновый запуск:
+```shell
+task docker-server-background
+```
+
+Остановка и очистка:
+```shell
+task docker-server-stop
+```
