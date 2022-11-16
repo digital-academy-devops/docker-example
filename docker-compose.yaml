@@ -16,7 +16,6 @@ services:
     volumes:
       - ./config/nginx/worker.conf:/etc/nginx/conf.d/default.conf
       - cv:/usr/share/nginx/html
-      - cv:/opt/app
 
   balancer:
     depends_on:
