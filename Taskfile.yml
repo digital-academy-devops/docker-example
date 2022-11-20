@@ -2,13 +2,8 @@ version: '3'
 
 dotenv: ['.env']
 
-# useful doc abt golang sprig
-# https://go-task.github.io/slim-sprig/date.html
-
 env:
   VERSION: '{{ .VERSION | default ( now | unixEpoch ) }}'
-  BASE_IMAGE: '{{ .BASE_IMAGE | default "alpine" }}'
-  IMAGE_TAG: '{{ .BASE_IMAGE }}-{{ .VERSION }}'
   PROJECT: '{{ .PROJECT | default "cv" }}'
 tasks:
   build:
@@ -29,10 +24,10 @@ tasks:
 
   docker-builder:
     cmds:
-      - docker build -t cv-builder:{{ .IMAGE_TAG }} -f Dockerfile.{{ .BASE_IMAGE }} --target builder .
+      - docker build -t cv-builder:{{ .IMAGE_TAG }} -f Dockerfile --target builder .
 
   docker-release:
-    docker build -t cv:{{ .IMAGE_TAG }} -f Dockerfile.{{ .BASE_IMAGE }} .
+    docker build -t cv:{{ .IMAGE_TAG }} -f Dockerfile .
 
   docker-build:
     cmds:

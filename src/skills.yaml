@@ -1,8 +1,5 @@
-# This file is used to extend skills with additional fields and used
-# as source for generating "technical" list in yamlcv.yaml.
-
 categories:
-  - &lang # this is YAML Anchor
+  - &lang
     Languages
   - &containers
     Containers & Orchestration
@@ -13,12 +10,12 @@ categories:
 
 skills:
 - name: python
-  level: middle
-  category: *lang # this is YAML alias
+  level: junior
+  category: *lang
   labels:
     - programming
 - name: golang
-  level: middle
+  level: junior
   category: *lang
   labels:
     - programming
@@ -34,7 +31,7 @@ skills:
   labels:
     - tools
 - name: k8s
-  level: middle
+  level: none
   category: *containers
   labels:
     - technology
@@ -49,5 +46,5 @@ skills:
   labels:
     - tools
 - name: AWS
-  level: middle
+  level: none
   category: *cloud
