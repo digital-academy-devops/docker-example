@@ -20,7 +20,7 @@ jobs:
     env:
       BUILDER_IMAGE: cv-builder
       RELEASE_IMAGE: cv
-      TAG: "${{ inputs.tag != '' && inputs.tag || 'latest' }}"
+      TAG: "${{ inputs.tag != '' && inputs.tag || github.ref_name }}"
       BASE_IMAGE: "${{ inputs.base_image != '' && inputs.base_image || 'alpine' }}"
     steps:
       - name: Check out Project
