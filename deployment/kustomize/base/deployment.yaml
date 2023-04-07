@@ -12,7 +12,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - cp -v /opt/app /cv
+            - cp -v /opt/app/* /cv
           volumeMounts:
             - mountPath: /cv
               name: cv
