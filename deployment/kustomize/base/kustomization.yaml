@@ -10,6 +10,7 @@ images:
       newTag: 1.23.2-alpine
     - name: cv
       newName: digitalacademydevops/cv
+      newTag: main
 
 resources:
 - namespace.yaml
