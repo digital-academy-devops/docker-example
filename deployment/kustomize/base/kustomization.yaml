@@ -17,4 +17,3 @@ resources:
 - cm.yaml
 - deployment.yaml
 - service.yaml
-- ingress.yaml

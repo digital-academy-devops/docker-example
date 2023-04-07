@@ -11,13 +11,5 @@ images:
 
 resources:
 - ../../base
+- ingress.yaml
 
-patchesStrategicMerge:
-- |-
-  apiVersion: networking.k8s.io/v1
-  kind: Ingress
-  metadata:
-    name: cv-mostashkin
-  spec:
-    rules:
-      - host: mostashkin.dacdevops.ru
