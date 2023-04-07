@@ -20,4 +20,4 @@ patchesStrategicMerge:
     name: cv-mostashkin
   spec:
     rules:
-      - host: mostashkin.dactusur.ru
+      - host: mostashkin.dacdevops.ru
